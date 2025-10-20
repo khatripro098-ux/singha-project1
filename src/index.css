@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE and old Edge */
+}
+
+.choose-card{
+
+  opacity: 0.5;
+  transform: scale(0.9);
+  transition: transform 1s ease, opacity 1s ease;
+  
+}
+
+.choose-card.animate{
+  opacity: 1;
+  transform: scale(1);
+  transition: all 1s ease, opacity 1s ease;
+}
+
+
+.ittems{
+  --radius: 33vw
+}
+
+@media (min-width: 768px){
+
+  .ittems{
+    --radius : 22vw
+  }
+}
+
+@media  (min-width: 1024px) {
+
+  .ittems{
+    --radius : 20vw
+  }
+}
+

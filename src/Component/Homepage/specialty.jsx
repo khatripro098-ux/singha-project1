@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import heartPic from '../../assets/organs/Heart.jpg'
+import heartPic from '../../assets/organs/heart.jpg'
+import { Link } from 'react-router-dom';
 
 function Specialty (){
 
@@ -126,6 +127,7 @@ function Specialty (){
             <div className='bg-[#f5f5f5] py-20'>
             <div className=" relative flex flex-col items-center mt-10 justify-center] "
                     >
+                <Link to = "/treatment">
                 <div className=' flex text-center w-[400px] justify-center cursor-pointer' onMouseEnter={()=>setHovered(true)}
                     onMouseLeave={()=>setHovered(false)}>
                     <span
@@ -139,6 +141,7 @@ function Specialty (){
                         Explore More 
                     </span>
                 </div>
+                </Link>
                 <div className="bg-[#00a1ab] w-[70px] h-[3px] mb-[6px]"></div>
                 <p className="text-center text-[15px] text-[#777777]">Explore our world-class medical procedures at affordable costs</p>
             </div>

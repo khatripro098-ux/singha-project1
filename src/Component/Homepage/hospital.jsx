@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import {Link} from 'react-router-dom'
 import golbalImg from '../../assets/hospital/artemis.webp'
 
 
@@ -11,28 +11,30 @@ function Hospital() {
     return(
         <div>
             <div className="py-20">
-            <div className=" relative flex flex-col items-center mt-10 justify-center] "
+            <div className=" relative flex flex-col items-center mt-30  justify-center] "
                     >
                 <div className=' flex text-center w-[400px] justify-center cursor-pointer' onMouseEnter={()=>setHovered(true)}
                     onMouseLeave={()=>setHovered(false)}>
+                    <Link to='/hospital' className={`absolute w-[350px] [top:-57px]`}> 
                     <span
-                        className={`absolute [top:-57px] text-[23px]   lg:text-[32px] text-[#002c5f] font-bold transition-opacity duration-500 ${hover ? 'opacity-0' : 'opacity-100'}`}
+                        className={` absolute text-[23px] [left:0px] [right:0px]  lg:text-[32px] text-[#002c5f] font-bold transition-opacity duration-500 ${hover ? 'opacity-0' : 'opacity-100'}`}
                     >
                         Our Partner Hospitals
                     </span>
                     <span
-                        className={`absolute [top:-57px] text-[25px]  lg:text-[32px] text-[#00a1ab] font-bold transition-opacity duration-500 ${hover ? 'opacity-100' : 'opacity-0'}`}
+                        className={` absolute  text-[25px] [left:0px] [right:0px] lg:text-[32px] text-[#00a1ab] font-bold transition-opacity duration-500 ${hover ? 'opacity-100' : 'opacity-0'}`}
                     >
                         Explore More 
                     </span>
+                    </Link>
                 </div>
                 <div className="bg-[#00a1ab] w-[70px] h-[3px] mb-[6px]"></div>
-                <p className="text-center text-[15px] text-[#777777]">We work with the world's leading healthcare institutions</p>
+                <p className=" text-center text-[15px] text-[#777777]">Comprehensive medical tourism services for international patients</p>
             </div>
 
             <div className="flex items-center mb-20 gap-5 justify-center flex-wrap w-[90vw] mt-8 m-auto px-10">
 
-                <div className="gap-1 cursor-pointer mt-5 flex rounded-xl flex-col shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:scale-105 
+                */<div className="gap-1 cursor-pointer mt-5 flex rounded-xl flex-col shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:scale-105 
                         transition-all duration-400 group"
                         style={
                     {
@@ -57,7 +59,7 @@ function Hospital() {
                     <li className="text-[13px]"><span className="fa fa-check text-[#00a1ab] text-[13px] mr-2"></span>Oncology</li>
                 </ul>
                 </div>
-            </div>
+            </div> 
             
             <div className="gap-1 mt-5 cursor-pointer flex rounded-xl flex-col shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:scale-105 
                         transition-all duration-400 group"

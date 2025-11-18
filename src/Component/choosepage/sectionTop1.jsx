@@ -33,18 +33,18 @@ function TopSection(){
 
     return(
         <div >
-                <div className="relative ">
+                <div className="relative  mt-[65px] lg:mt-[92px]">
 
-                    <img className=" w-[100vw] object-cover h-[100vh]" src={Header} alt="" />
+                    <img className=" w-[100vw] object-cover h-[30rem]" src={Header} alt="" />
                     <div>
                         <div className="absolute  inset-0 
                         ">
 
-                            <div className="w-[90vw] m-auto  mt-30 ">
+                            <div className="w-[90vw] m-auto  mt-15 ">
                                 <div className="relative ">
 
                                 <svg
-                            className=" absolute inset-0 top-[-50px] left-[25%] w-[72vw] h-[20vw] rotate-180"
+                            className=" absolute inset-0 lg:top-[-59px] md:top-[-60px] top-[-39px] lg:left-[25%] left-[10%] lg:w-[72vw] w-[86vw] lg:h-[20vw] h-[30vw] md:h-[20vw] sm:h-[24vw]  rotate-180"
                             viewBox="0 0 1440 320"
                             preserveAspectRatio="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ function TopSection(){
                             
 
                             { service.map((service,i)=>(
-                                <div key={i} className="relative flex  gap-2 lg:mt-5 mt-8  items-center font-bold lg:ml-[30vw] md:ml-[40vh] sm:ml-[30vw] ml-[-10px]  lg:pl-17 pl-10 ">
+                                <div key={i} className="relative flex  gap-2 lg:mt-5 mt-8  items-center font-bold lg:ml-[30vw] md:ml-[60vh] sm:ml-[30vw] ml-[-10px]  lg:pl-17 pl-10 ">
                                     <div>
                                         <svg
                                         xmlns="http://www.w3.org/2000/svg"

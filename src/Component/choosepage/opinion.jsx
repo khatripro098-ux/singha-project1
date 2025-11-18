@@ -5,7 +5,7 @@ import Doctorsimg from '../../assets/offer/doctor.jpg'
 import Equipmentimg from '../../assets/offer/equipment.jpg'
 import Visaimg from '../../assets/offer/visa.jpg'
 import { useEffect, useRef, useState } from 'react';
-import { div, h1 } from 'framer-motion/client'
+
 
 
 function Opinion (){
@@ -98,7 +98,7 @@ function Opinion (){
                 })
 
         
-        },{threshold:0.3})
+        },{threshold:0.1})
 
         refs.current.forEach((ref)=> ref && observer.observe(ref));
         return()=> observer.disconnect();
@@ -114,30 +114,34 @@ function Opinion (){
                 return (
                     <div  key={i} 
                     data-index ={i}
-                        ref={(el)=> refs.current[i]=el}>
-
+                        ref={(el)=> refs.current[i]=el}
+                    
+                        >
+                        
                         <div
-                        className='w-[85vw] p-6 m-auto mt-20 rounded-md shadow-[0_0_10px_rgba(0,0,0,0.2)] overflow-x-hidden'>
+                        className='w-[85vw]   lg:p-2 md:p-4 sm:p-6  m-auto mt-20 rounded-md shadow-[0_0_10px_rgba(0,0,0,0.2)] overflow-x-hidden'>
                         <div  className="  flex gap-10"  onClick={items.head === 'Visa Assistance' ?
                                         visaClicked : undefined
                         }>
-                        <div className=" flex flex-col gap-4 justify-center items-center text-center w-[70vw] ">
+                        <div className='flex lg:flex-row flex-col-reverse flex-1 lg:h-[320px] flex-wrap gap-10 justify-center items-center  '>
+                            <div className=" flex flex-col gap-4  text-center w-[80vw] lg:w-[45vw] md:w-[80vw] sm:w-[70vw] ">
                             <h1 className="font-bold text-[25px]  text-[#002c5f]">{items.head}</h1>
-                            <p className={`text-[#777777] transform transition-all duration-1000
+                            <p className={` text-[#777777] transform transition-all duration-1000
                         ${
                             visible.includes(i) ?
                             'opacity-100 translate-y-0' : 'opacity-0 translate-y-[50px]'
                         }`}>
                     {items.para}
-                </p>
-            </div>
+                        </p>
+                        </div>
 
-            <div className={`transform transition-all duration-1000 ${visible.includes(i) ?
-                'opacity-100 translate-x-0' : 'opacity-0 translate-x-[50px]'
-            }`}>
-                <img className="w-[300px] h-[200px] rounded-2xl" src={items.img} alt="" />
-            </div>
+                        <div className={` transform transition-all duration-1000 ${visible.includes(i) ?
+                            'opacity-100 translate-x-0' : 'opacity-0 translate-x-[50px]'
+                        }`}>
+                            <img className="w-85 h-55 sm:rounded-2xl" src={items.img} alt="" />
+                        </div>
 
+                        </div>
             
         </div>
 
@@ -149,17 +153,17 @@ function Opinion (){
                 (
                     
                     <div className=' flex w-[80vw] mt-5 m-auto relative flex-col  '>
-                        <div className=' h-[2px] ml-30 bg-[#0077b6] mb-5 w-[60vw]'>
+                        <div className=' h-[2px] ml-[10vw] bg-[#0077b6] mb-5 w-[60vw]'>
             
                         </div>
-                    <div className='flex  justify-center flex-wrap gap-6 bg-[#002c5f]'>
+                    <div className='flex p-6  justify-center flex-wrap gap-6 bg-[#002c5f]'>
                         {
                         country.map((items,index)=>(
                         <div key={index} onClick={()=>setcountryClickedFun(index)}
-                        className=' py-8 flex  gap-12 justify-center mt-3 '>
+                        className=' flex lg:gap-12 justify-center '>
                         
                             
-                                <div className='  z-[100] flex  bg-[#00a1ab] px-2 py-4 min-w-[120px] rounded-xl justify-center'>
+                                <div className='  flex  bg-[#00a1ab] px-2 py-4 min-w-[120px] rounded-xl justify-center'>
                                 {items.name}
                             </div>
                         
@@ -172,7 +176,7 @@ function Opinion (){
                     </div>
                     
                                 {countryClicked !== null && (
-                                    <div className='text-center  bg-white z-[10] shadow-[0_0_15px_rgba(0,0,0,0.2)] p-5  justify-center items-center'>
+                                    <div className='text-center  bg-white shadow-[0_0_15px_rgba(0,0,0,0.2)] p-5  justify-center items-center'>
                                         {country[countryClicked].details}
                                     </div>
                                 )}

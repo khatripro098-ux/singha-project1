@@ -20,6 +20,11 @@ Better expertise abroad - A lot of patients have doctors available in their home
 Affordable care - Many patients (uninsured in their home country) have expertise and healthcare available but the cost is prohibitive for getting treated locally and they save a lot of money (even after adding travel and stay expenses) by traveling abroad for treatment
 Long waiting queue - Many Developed Countries which have public health systems which even offer quality care with best expertise for free of cost but patients may have to wait for weeks, months or sometimes years to access it. Many of these patients opt to travel and access healthcare faster.
 Miscellaneous - Add medical procedure with tourism, privacy of not getting treated in their home country are some of the other reasons people opt to travel abroad.`        
+        },
+        {
+            question : 'What are the visa and travel requirements for medical tourism in different countries?',
+            answer : `
+            Visa requirements for each country vary based on the origin country of the patient. Gods Life Health Care has created a dedicated tool for patients to check the requirements. Your case manager can also help you get all details related to your visa requirements and any medical visa invitation letter from your chosen healthcare service provider.`        
         }
     ]
     
@@ -48,7 +53,7 @@ Miscellaneous - Add medical procedure with tourism, privacy of not getting treat
 
                         return (
                             <div key={index}
-                                onClick={()=>toggleDrop(index)}    className="flex cursor-pointer flex-col shadow-[0_0_15px_rgba(0,0,0,0.2)]  rounded-xl ">
+                                onClick={()=>toggleDrop(index)}    className="flex cursor-pointer flex-col shadow-[0_0_15px_rgba(0,0,0,0.2)] mb-4  rounded-xl ">
                             <div className="flex justify-between p-5 items-center">
                                 <p className="text-[#002c5f]  font-semibold">{items.question} </p>
                             <i className={` fas fa-chevron-down text-[#002c5f] transition-transform dutation-300 ease-in-out

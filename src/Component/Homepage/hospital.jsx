@@ -6,6 +6,28 @@ import golbalImg from '../../assets/hospital/artemis.webp'
 
 function Hospital() {
 
+    const hospitalData= [
+        {
+            img: golbalImg,
+            hospitalName: "Global Health Institute",
+            location : "Thailand, Bankok",
+            items : ['Cardio surgery', 'orthopedics','Oncology']
+        },
+
+        {
+            img: golbalImg,
+            hospitalName: "American Institute",
+            location : "America, Florida",
+            items : ['Cardio surgery', 'orthopedics','Oncology']
+        },
+        {
+            img: golbalImg,
+            hospitalName: "Indian Institute",
+            location : "India, Delhi",
+            items : ['Cardio surgery', 'orthopedics','Oncology']
+        }
+    ]
+
     const[hover,setHovered] = useState(false)
 
     return(
@@ -33,62 +55,11 @@ function Hospital() {
             </div>
 
             <div className="flex items-center mb-20 gap-5 justify-center flex-wrap w-[90vw] mt-8 m-auto px-10">
-
-                */<div className="gap-1 cursor-pointer mt-5 flex rounded-xl flex-col shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:scale-105 
-                        transition-all duration-400 group"
-                        style={
-                    {
-                        backgroundColor:'rgba(100, 146, 175, 0.1)',
-                    }
-                }>
-                <div className="relative text-white lg:w-[330px] md:w-[310px] sm:-[290px] w-[280px]">
-                    <img className="w-85 h-45 rounded-md" src={golbalImg} alt="" />
-                    <div className="absolute top-29 left-0 w-full p-2 bg-gradient-to-b from-transparent to-black/50">
-                        <p className="text-[18px] font-bold 
-                        group-hover:underline transition-all duration-300">Global Health Institute</p>
-                        <div className="flex gap-1 items-center">
-                            <i className="fa fa-location-dot text-[#00a1ab]"></i>
-                            <p className="text-[13px]">Bangkok, Thailland</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="p-3">
-                    <ul className="flex flex-col gap-2 text-[#777777] text-sm">
-                    <li className="text-[13px]"><span className="fa fa-check text-[#00a1ab] text-[13px] mr-2"></span>Cardiac Surgery</li>
-                    <li className="text-[13px]"><span className="fa fa-check text-[#00a1ab] text-[13px] mr-2"></span>Orthopedics</li>
-                    <li className="text-[13px]"><span className="fa fa-check text-[#00a1ab] text-[13px] mr-2"></span>Oncology</li>
-                </ul>
-                </div>
-            </div> 
             
-            <div className="gap-1 mt-5 cursor-pointer flex rounded-xl flex-col shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:scale-105 
-                        transition-all duration-400 group"
-                        style={
-                    {
-                        backgroundColor:'rgba(100, 146, 175, 0.1)',
-                    }
-                }>
-                <div className="relative text-white lg:w-[330px] md:w-[310px] sm:-[290px] w-[280px]">
-                    <img className="w-85 h-45 rounded-md" src={golbalImg} alt="" />
-                    <div className="absolute top-29 left-0 w-full p-2 bg-gradient-to-b from-transparent to-black/50">
-                        <p className="text-[18px] font-bold 
-                        group-hover:underline transition-all duration-300">Global Health Institute</p>
-                        <div className="flex gap-1 items-center">
-                            <i className="fa fa-location-dot text-[#00a1ab]"></i>
-                            <p className="text-[13px]">Bangkok, Thailland</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="p-3">
-                    <ul className="flex flex-col gap-2 text-[#777777] text-sm">
-                    <li className="text-[13px]"><span className="fa fa-check text-[#00a1ab] text-[13px] mr-2"></span>Cardiac Surgery</li>
-                    <li className="text-[13px]"><span className="fa fa-check text-[#00a1ab] text-[13px] mr-2"></span>Orthopedics</li>
-                    <li className="text-[13px]"><span className="fa fa-check text-[#00a1ab] text-[13px] mr-2"></span>Oncology</li>
-                </ul>
-                </div>
-            </div>
+            {
+            hospitalData.map((data,i)=>(
 
-            <div className="cursor-pointer gap-1 mt-5 flex rounded-xl flex-col shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:scale-105 
+                <div key={i} className="cursor-pointer gap-1 mt-5 flex rounded-xl flex-col shadow-[0_0_15px_rgba(0,0,0,0.2)] hover:scale-105 
                         transition-all duration-400 group"
                         style={
                     {
@@ -99,21 +70,26 @@ function Hospital() {
                     <img className="w-85 h-45 rounded-md" src={golbalImg} alt="" />
                     <div className="absolute top-29 left-0 w-full p-2 bg-gradient-to-b from-transparent to-black/50">
                         <p className="text-[18px] font-bold 
-                        group-hover:underline transition-all duration-300">Global Health Institute</p>
+                        group-hover:underline transition-all duration-300">{data.hospitalName}</p>
                         <div className="flex gap-1 items-center">
                             <i className="fa fa-location-dot text-[#00a1ab]"></i>
-                            <p className="text-[13px]">Bangkok, Thailland</p>
+                            <p className="text-[13px]">{data.location}</p>
                         </div>
                     </div>
                 </div>
                 <div className="p-3">
                     <ul className="flex flex-col gap-2 text-[#777777] text-sm">
-                    <li className="text-[13px]"><span className="fa fa-check text-[#00a1ab] text-[13px] mr-2 text-[5px]"></span>Cardiac Surgery</li>
-                    <li className="text-[13px]"><span className="fa fa-check text-[#00a1ab] text-[13px] mr-2"></span>Orthopedics</li>
-                    <li className="text-[13px]"><span className="fa fa-check text-[#00a1ab] text-[13px] mr-2"></span>Oncology</li>
+                    {
+                        data.items.map((it,i)=>(
+                            <li key={i} className="text-[13px]"><span className="fa fa-check text-[#00a1ab] text-[13px] mr-2 text-[5px]"></span>{it}</li>
+                        ))
+                    }
+                    
                 </ul>
                 </div>
             </div>
+            ))
+            }
 
             
             

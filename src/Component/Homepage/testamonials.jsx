@@ -1,6 +1,6 @@
-import { div, img } from "framer-motion/client";
+
 import { use, useEffect, useState } from "react"
-import { useLocation } from "react-router-dom";
+
 import youtubePlay from '../../assets/offer/youtubeplay.jpg'
 
 
@@ -11,7 +11,6 @@ function Testa(){
     const [scaleIndex,setScale] = useState(0);
     const [video,setVideo] = useState(false)
 
-    const location = useLocation();
 
 
     const testamonies = [
@@ -139,7 +138,7 @@ function Testa(){
                                 <div className="lg:h-18 lg:w-18 h-13 w-13  border-[#00a1ab] rounded-full border-2 overflow-hidden">
                                     <img className="object-fit" src={card.img} alt="" />
                                 
-                                {location.pathname === "/offer" && (
+                                
                                 <div
                                     onClick={handleClick}
                                     className="absolute inset-0 top-[-21%] flex items-center justify-center cursor-pointer"
@@ -150,7 +149,7 @@ function Testa(){
                                 </div>
 
                                 
-                                )}
+                                
 
                                 </div>
 

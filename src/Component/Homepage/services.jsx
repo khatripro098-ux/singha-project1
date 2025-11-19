@@ -19,25 +19,6 @@ function Service (){
 
     ]
 
-
-    const [rotation,setRotation] = useState(0);
-
-    useEffect(()=>{
-
-        let animationFrame;
-
-
-        const animate=()=>{
-
-        setRotation(prev=> prev+0.2)
-
-        animationFrame = requestAnimationFrame(animate);
-    }
-
-    animationFrame = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(animationFrame)
-    },[])
-
     return (
 
         <div className=" overflow-hidden">
@@ -58,16 +39,12 @@ function Service (){
 
             <div className="flex mt-30 pb-25 items-center justify-center h-140">
                 <div 
-                style={{
-                    transform: `rotate(${rotation}deg)`
-                }}
-                className="relative w-[70vw] h-[70vw] lg:h-[40vw] lg:w-[40vw] md:h-[45vw] md:w-[45vw] rounded-full flex items-center justify-center border-2 h-10 rotate-360 transmission-all duration-500">
+                
+                className="service-outer-circle relative w-[70vw] h-[70vw] lg:h-[40vw] lg:w-[40vw] md:h-[45vw] md:w-[45vw] rounded-full flex items-center justify-center border-2 h-10 rotate-360 transmission-all duration-500">
                     <div
 
-                    style={{
-                        transform:`rotate(-${rotation-9}deg) `
-                    }}
-                    className=" w-24 text-white bg-[#00a1ab] shadow-[0_0_0_10px_rgba(0,161,171,0.2)] h-24 rounded-full flex items-center justify-center">
+                    
+                    className="service-center-text  w-24 text-white bg-[#00a1ab] shadow-[0_0_0_10px_rgba(0,161,171,0.2)] h-24 rounded-full flex items-center justify-center">
                         Your Journey
                     </div>
 
@@ -84,15 +61,11 @@ function Service (){
 
                             className="absolute top-1/2 left-1/2 z-1 bg-white -translate-x-1/2 rounded-full -translate-y-1/2 origin-center ittems">
                                 <div
-
-                                    style={{
-                                        transform: `rotate(-${rotation-10}deg) `
-                                    }}
                                 
-                                    className={`flex flex-col p-3 gap-1 h-24 w-24 rounded-full items-center
+                                    className={`service-item-inner p-1 pt-3 flex-col gap-1 h-24 w-24 rounded-full items-center justify-center
                                     justify-center text-center shadow-[0_0_15px_rgba(0,0,0,0.2)]`}>
                                 <i className={`text-[#00a1ab]  ${items.icon}`}></i>
-                                <p className="text-[13px] font-semibold ">{items.lable}</p>
+                                <p className="text-[13px]  font-semibold ">{items.lable}</p>
                             </div>
                             </div>
                         )

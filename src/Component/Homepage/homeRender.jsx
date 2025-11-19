@@ -31,7 +31,7 @@ function RenderHome() {
         <Service></Service>
         <HealthVlog></HealthVlog>
         <Consolt></Consolt>
-        <ChatBot></ChatBot>
+        
         <Footer></Footer>
         </>
         )

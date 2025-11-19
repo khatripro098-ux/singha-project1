@@ -10,14 +10,14 @@ function Doctor (){
 
     useEffect(() => {
 
-        const API_URL = "/api/doctor/"
+    const API_URL = "/api/doctor/"
   async function fetchData() {
   try {
     const res = await fetch(API_URL);
-    const data = await res.json();   // read once
+    const data = await res.json();   
     console.log("Raw data:", data);
     setDoctorin(data)
-    return data;                     // use data further
+    return data;                     
   } catch (err) {
     console.error("Fetch error:", err);
   }
@@ -33,7 +33,7 @@ function Doctor (){
     return(
 
         <div>
-        <h1></h1>
+        
             <div className=" relative flex flex-col items-center mt-30  justify-center] "
                     >
                 <div className=' flex text-center w-[400px] justify-center cursor-pointer' onMouseEnter={()=>setHovered(true)}
